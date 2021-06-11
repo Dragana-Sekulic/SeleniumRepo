@@ -1,17 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11401" started-at="2021-06-08T21:23:21 CEST" finished-at="2021-06-08T21:23:33 CEST">
+  <suite name="Default suite" duration-ms="105899" started-at="2021-06-11T19:44:48 CEST" finished-at="2021-06-11T19:46:34 CEST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11401" started-at="2021-06-08T21:23:21 CEST" finished-at="2021-06-08T21:23:33 CEST">
-      <class name="tests.Proba">
-        <test-method status="PASS" signature="test()[pri:0, instance:tests.Proba@76f2b07d]" name="test" duration-ms="11294" started-at="2021-06-08T21:23:22 CEST" finished-at="2021-06-08T21:23:33 CEST">
+    <test name="Default test" duration-ms="105899" started-at="2021-06-11T19:44:48 CEST" finished-at="2021-06-11T19:46:34 CEST">
+      <class name="tests.SignInTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.SignInTests@fad74ee]" name="setUp" is-config="true" duration-ms="7041" started-at="2021-06-11T19:44:48 CEST" finished-at="2021-06-11T19:44:55 CEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-      </class> <!-- tests.Proba -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="navigateToPage()[pri:0, instance:tests.SignInTests@fad74ee]" name="navigateToPage" is-config="true" duration-ms="5717" started-at="2021-06-11T19:44:55 CEST" finished-at="2021-06-11T19:45:01 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToPage -->
+        <test-method status="PASS" signature="createAccountAndRegister()[pri:0, instance:tests.SignInTests@fad74ee]" name="createAccountAndRegister" duration-ms="11890" started-at="2021-06-11T19:45:01 CEST" finished-at="2021-06-11T19:45:13 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountAndRegister -->
+        <test-method status="PASS" signature="deleteCookies()[pri:0, instance:tests.SignInTests@fad74ee]" name="deleteCookies" is-config="true" duration-ms="1901" started-at="2021-06-11T19:45:13 CEST" finished-at="2021-06-11T19:45:15 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCookies -->
+        <test-method status="PASS" signature="navigateToPage()[pri:0, instance:tests.SignInTests@fad74ee]" name="navigateToPage" is-config="true" duration-ms="4137" started-at="2021-06-11T19:45:15 CEST" finished-at="2021-06-11T19:45:19 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToPage -->
+        <test-method status="PASS" signature="createAccountWithAlreadyRegisteredEmail()[pri:1, instance:tests.SignInTests@fad74ee]" name="createAccountWithAlreadyRegisteredEmail" duration-ms="6576" started-at="2021-06-11T19:45:19 CEST" finished-at="2021-06-11T19:45:25 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountWithAlreadyRegisteredEmail -->
+        <test-method status="PASS" signature="deleteCookies()[pri:0, instance:tests.SignInTests@fad74ee]" name="deleteCookies" is-config="true" duration-ms="3415" started-at="2021-06-11T19:45:25 CEST" finished-at="2021-06-11T19:45:29 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCookies -->
+        <test-method status="PASS" signature="navigateToPage()[pri:0, instance:tests.SignInTests@fad74ee]" name="navigateToPage" is-config="true" duration-ms="5633" started-at="2021-06-11T19:45:29 CEST" finished-at="2021-06-11T19:45:34 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToPage -->
+        <test-method status="PASS" signature="createAccountWithInvalidEmail()[pri:3, instance:tests.SignInTests@fad74ee]" name="createAccountWithInvalidEmail" duration-ms="11971" started-at="2021-06-11T19:45:34 CEST" finished-at="2021-06-11T19:45:46 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountWithInvalidEmail -->
+        <test-method status="PASS" signature="deleteCookies()[pri:0, instance:tests.SignInTests@fad74ee]" name="deleteCookies" is-config="true" duration-ms="2161" started-at="2021-06-11T19:45:46 CEST" finished-at="2021-06-11T19:45:49 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCookies -->
+        <test-method status="PASS" signature="navigateToPage()[pri:0, instance:tests.SignInTests@fad74ee]" name="navigateToPage" is-config="true" duration-ms="5384" started-at="2021-06-11T19:45:49 CEST" finished-at="2021-06-11T19:45:54 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToPage -->
+        <test-method status="PASS" signature="signInWithValidCredentials()[pri:5, instance:tests.SignInTests@fad74ee]" name="signInWithValidCredentials" duration-ms="12737" started-at="2021-06-11T19:45:54 CEST" finished-at="2021-06-11T19:46:07 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInWithValidCredentials -->
+        <test-method status="PASS" signature="deleteCookies()[pri:0, instance:tests.SignInTests@fad74ee]" name="deleteCookies" is-config="true" duration-ms="5641" started-at="2021-06-11T19:46:07 CEST" finished-at="2021-06-11T19:46:12 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCookies -->
+        <test-method status="PASS" signature="navigateToPage()[pri:0, instance:tests.SignInTests@fad74ee]" name="navigateToPage" is-config="true" duration-ms="3177" started-at="2021-06-11T19:46:12 CEST" finished-at="2021-06-11T19:46:15 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToPage -->
+        <test-method status="PASS" signature="signInWithInvalidEmail()[pri:6, instance:tests.SignInTests@fad74ee]" name="signInWithInvalidEmail" duration-ms="3744" started-at="2021-06-11T19:46:15 CEST" finished-at="2021-06-11T19:46:19 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInWithInvalidEmail -->
+        <test-method status="PASS" signature="deleteCookies()[pri:0, instance:tests.SignInTests@fad74ee]" name="deleteCookies" is-config="true" duration-ms="1506" started-at="2021-06-11T19:46:19 CEST" finished-at="2021-06-11T19:46:21 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCookies -->
+        <test-method status="PASS" signature="navigateToPage()[pri:0, instance:tests.SignInTests@fad74ee]" name="navigateToPage" is-config="true" duration-ms="3622" started-at="2021-06-11T19:46:21 CEST" finished-at="2021-06-11T19:46:24 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToPage -->
+        <test-method status="PASS" signature="signInWithInvalidPassword()[pri:7, instance:tests.SignInTests@fad74ee]" name="signInWithInvalidPassword" duration-ms="7156" started-at="2021-06-11T19:46:24 CEST" finished-at="2021-06-11T19:46:32 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInWithInvalidPassword -->
+        <test-method status="PASS" signature="deleteCookies()[pri:0, instance:tests.SignInTests@fad74ee]" name="deleteCookies" is-config="true" duration-ms="1982" started-at="2021-06-11T19:46:32 CEST" finished-at="2021-06-11T19:46:34 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCookies -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:tests.SignInTests@fad74ee]" name="closeDriver" is-config="true" duration-ms="412" started-at="2021-06-11T19:46:34 CEST" finished-at="2021-06-11T19:46:34 CEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- tests.SignInTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
