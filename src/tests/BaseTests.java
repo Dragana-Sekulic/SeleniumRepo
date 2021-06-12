@@ -9,7 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.sun.xml.internal.bind.v2.model.core.MaybeElement;
+
 import pages.MainNavigation;
+import pages.MyAccountPage;
 import pages.PersonalInformationPage;
 import pages.SignInPage;
 
@@ -22,7 +25,8 @@ public class BaseTests {
 	SignInPage signInPage;
 	MainNavigation mainNavigation;
 	PersonalInformationPage personalInfo;
-
+	MyAccountPage myAccount;
+	
 	@BeforeClass
 	public void setUp() throws IOException {
 		System.setProperty("webdriver.chrome.driver", "driver-lib\\chromedriver.exe");
@@ -35,6 +39,7 @@ public class BaseTests {
 		signInPage = new SignInPage(driver);
 		mainNavigation = new MainNavigation(driver);
 		personalInfo = new PersonalInformationPage(driver);
+		myAccount = new MyAccountPage(driver);
 
 	}
 

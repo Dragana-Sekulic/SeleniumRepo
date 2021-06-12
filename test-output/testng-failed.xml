@@ -5,10 +5,11 @@
     <classes>
       <class name="tests.SignInTests">
         <methods>
+          <include name="signInWithInvalidEmail"/>
           <include name="closeDriver"/>
           <include name="setUp"/>
+          <include name="signInWithoutCredentials"/>
           <include name="navigateToPage"/>
-          <include name="signInWithInvalidPassword"/>
           <include name="deleteCookies"/>
         </methods>
       </class> <!-- tests.SignInTests -->

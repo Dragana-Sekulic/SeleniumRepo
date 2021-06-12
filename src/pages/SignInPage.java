@@ -77,10 +77,12 @@ public class SignInPage {
 	}
 
 	public void insertEmailForSignIn(String email) {
+		this.getEmailSignInInputField().clear();
 		this.getEmailSignInInputField().sendKeys(email);
 	}
 
 	public void insertPassword(String password) {
+		this.getPasswordInputField().clear();
 		this.getPasswordInputField().sendKeys(password);
 	}
 

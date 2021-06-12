@@ -65,8 +65,8 @@ public class SignInTests extends BaseTests {
 	
 	@Test(priority = 5)
 	public void signInWithValidCredentials() {
-		String email = excelReader.getStringData("TSu2", 7, 3);
-		String password = excelReader.getStringData("TSu2", 8, 3);
+		String email = excelReader.getStringData("TSu2", 8, 3);
+		String password = excelReader.getStringData("TSu2", 9, 3);
 		signInForm(email, password);
 		wait.until(ExpectedConditions.visibilityOf(mainNavigation.getSignOutButton()));
 		assertEquals(mainNavigation.isSignOutDisplayed(), true);
@@ -74,21 +74,31 @@ public class SignInTests extends BaseTests {
 	}
 	@Test(priority = 6)
 	public void signInWithInvalidEmail() {
-		String email = excelReader.getStringData("TSu2", 19, 3);
-		String password = excelReader.getStringData("TSu2", 20, 3);
+		String email = excelReader.getStringData("TSu2", 21, 3);
+		String password = excelReader.getStringData("TSu2", 22, 3);
 		signInForm(email, password);
-		String expected = excelReader.getStringData("TSu2", 23, 3);
+		String expected = excelReader.getStringData("TSu2", 25, 3);
 		assertEquals(signInPage.emailSignInAlert(), expected);
 
 	}
 	@Test(priority = 7)
 	public void signInWithInvalidPassword() {
-		String email = excelReader.getStringData("TSu2", 31, 3);
-		String password = excelReader.getStringData("TSu2", 32, 3);
-		String expected = excelReader.getStringData("TSu2", 35, 3);
+		String email = excelReader.getStringData("TSu2", 34, 3);
+		String password = excelReader.getStringData("TSu2", 35, 3);
+		String expected = excelReader.getStringData("TSu2", 38, 3);
 
 		signInForm(email, password);
 		assertEquals(signInPage.passwordAlert(), expected);
+
+	}
+	@Test(priority = 8)
+	public void signInWithoutCredentials() {
+		String email = "";
+		String password = "";
+		String expected = excelReader.getStringData("TSu2", 51, 3);
+
+		signInForm(email, password);
+		assertEquals(signInPage.emailSignInAlert(), expected);
 
 	}
 	
