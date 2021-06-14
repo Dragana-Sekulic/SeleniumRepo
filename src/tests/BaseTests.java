@@ -3,6 +3,7 @@ package tests;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +14,8 @@ import com.sun.xml.internal.bind.v2.model.core.MaybeElement;
 
 import pages.MainNavigation;
 import pages.MyAccountPage;
-import pages.PersonalInformationPage;
+import pages.PersonalInformationForm;
+import pages.ShopPage;
 import pages.SignInPage;
 
 public class BaseTests {
@@ -24,8 +26,9 @@ public class BaseTests {
 	String homeUrl;
 	SignInPage signInPage;
 	MainNavigation mainNavigation;
-	PersonalInformationPage personalInfo;
+	PersonalInformationForm personalInfo;
 	MyAccountPage myAccount;
+	ShopPage shopPage;
 	
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -38,8 +41,9 @@ public class BaseTests {
 		homeUrl = excelReader.getStringData("TSu1", 4 , 3);
 		signInPage = new SignInPage(driver);
 		mainNavigation = new MainNavigation(driver);
-		personalInfo = new PersonalInformationPage(driver);
+		personalInfo = new PersonalInformationForm(driver);
 		myAccount = new MyAccountPage(driver);
+		shopPage = new ShopPage(driver);
 
 	}
 

@@ -8,12 +8,19 @@ public class MyAccountPage {
 
 	WebDriver driver;
 	WebElement personalInfoTab;
+	WebElement myAddressesTab;
 	WebElement mrRadioButton;
 	WebElement mrsRadioButton;
 	WebElement curentPassswordInputField;
 	WebElement newPasswordInputField;
 	WebElement confirmationInputField;
 	WebElement saveButton;
+	WebElement updateAddressButton;
+	WebElement newAddressCheck;
+	WebElement newCityCheck;
+	WebElement newStateCheck;
+	WebElement newPostalCodeCheck;
+	WebElement addNewAddressButton;
 
 	public MyAccountPage(WebDriver driver) {
 		super();
@@ -43,10 +50,38 @@ public class MyAccountPage {
 	public WebElement getConfirmationInputField() {
 		return driver.findElement(By.id("confirmation"));
 	}
-	
 
 	public WebElement getSaveButton() {
 		return driver.findElement(By.name("submitIdentity"));
+	}
+
+	public WebElement getMyAddressesTab() {
+		return driver.findElement(By.linkText("My addresses"));
+	}
+
+	public WebElement getUpdateAddressButton() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]"));
+	}
+
+	public WebElement getNewAddressCheck() {
+		return driver.findElement(By.className("address_address1"));
+	}
+
+	public WebElement getNewCityCheck() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[5]/span[1]"));
+	}
+
+	public WebElement getNewStateCheck() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[5]/span[2]"));
+	}
+
+	public WebElement getNewPostalCodeCheck() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[5]/span[3]"));
+	}
+	
+
+	public WebElement getAddNewAddressButton() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[2]/a/span"));
 	}
 
 	public void clickOnPersonalInformation() {
@@ -88,9 +123,39 @@ public class MyAccountPage {
 		this.getConfirmationInputField().sendKeys(password);
 
 	}
-	
+
 	public void clickOnSaveButton() {
 		this.getSaveButton().click();
+
+	}
+
+	public void clickOnMyAddressesTab() {
+		this.getMyAddressesTab().click();
+	}
+
+	public void clickOnUpdateAddressButton() {
+		this.getUpdateAddressButton().click();
+	}
+
+	public String checkNewAddress() {
+		return this.getNewAddressCheck().getText();
+
+	}
+
+	public String checkNewCity() {
+		return this.getNewCityCheck().getText();
+	}
+	
+	public String checkNewState() {
+		return this.getNewStateCheck().getText();
+	}
+	
+	public String checkNewPostalCode() {
+		return this.getNewPostalCodeCheck().getText();
+	}
+	
+	public void clickOnAddNewAddress() {
+		this.getAddNewAddressButton().click();
 		
 	}
 }

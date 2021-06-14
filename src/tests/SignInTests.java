@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.sun.org.apache.xml.internal.security.utils.SignerOutputStream;
+
 public class SignInTests extends BaseTests {
 	
 	@BeforeMethod
@@ -17,12 +19,7 @@ public class SignInTests extends BaseTests {
 		driver.manage().window().maximize();
 	}
 	
-	//insert email into Email field and click on Register button 
-	public void fillInEmailAndSubmit(String sheetName, int rowNum, int colNum) {
-		mainNavigation.clickOnSignInButton();
-		signInPage.insertEmail(excelReader.getStringData(sheetName, rowNum, colNum));
-		signInPage.clickOnCreateAnAccount();
-	}
+	
 	//sign in form
 		public void signInForm(String email, String password) {
 			mainNavigation.clickOnSignInButton();
@@ -31,39 +28,8 @@ public class SignInTests extends BaseTests {
 			signInPage.clickOnSignInButton();
 			
 		}
-		
+			
 	@Test(priority = 0)
-	public void createAccountAndRegister() {				
-		fillInEmailAndSubmit("TSu1", 8, 3);
-				
-		personalInfo.insertFirstName(excelReader.getStringData("TSu1", 10, 3));
-		personalInfo.insertLastName(excelReader.getStringData("TSu1", 11, 3));
-		personalInfo.insertPassword(excelReader.getStringData("TSu1", 12, 3));
-		personalInfo.insertAddress(excelReader.getStringData("TSu1", 13, 3));
-		personalInfo.insertCity(excelReader.getStringData("TSu1", 14, 3));
-		personalInfo.selectState(excelReader.getStringData("TSu1", 15, 3));
-		personalInfo.insertPostalCode(String.valueOf(excelReader.getIntegerData("TSu1", 16, 3)));
-		personalInfo.insertMobilePhone(String.valueOf(excelReader.getIntegerData("TSu1", 17, 3)));
-		personalInfo.insertAddressAlias(excelReader.getStringData("TSu1", 18, 3));
-		personalInfo.clickOnRegisterButton();
-		
-		assertEquals(mainNavigation.isSignOutDisplayed(), true);
-		
-	}
-	@Test(priority = 1)
-	public void createAccountWithAlreadyRegisteredEmail() {
-		fillInEmailAndSubmit("TSu1", 30 , 3);
-		wait.until(ExpectedConditions.visibilityOf(signInPage.getCreateAcountErrorAlert()));
-		assertEquals(signInPage.isErrorAlertDisplayed(), true);
-	}
-	@Test(priority = 3)
-	public void createAccountWithInvalidEmail() {
-		fillInEmailAndSubmit("TSu1", 42 , 3);
-		
-		assertEquals(signInPage.isInvalidEmailAlertDisplayed(), true);
-	}
-	
-	@Test(priority = 5)
 	public void signInWithValidCredentials() {
 		String email = excelReader.getStringData("TSu2", 8, 3);
 		String password = excelReader.getStringData("TSu2", 9, 3);
@@ -72,7 +38,7 @@ public class SignInTests extends BaseTests {
 		assertEquals(mainNavigation.isSignOutDisplayed(), true);
 
 	}
-	@Test(priority = 6)
+	@Test(priority = 1)
 	public void signInWithInvalidEmail() {
 		String email = excelReader.getStringData("TSu2", 21, 3);
 		String password = excelReader.getStringData("TSu2", 22, 3);
@@ -81,7 +47,7 @@ public class SignInTests extends BaseTests {
 		assertEquals(signInPage.emailSignInAlert(), expected);
 
 	}
-	@Test(priority = 7)
+	@Test(priority = 2)
 	public void signInWithInvalidPassword() {
 		String email = excelReader.getStringData("TSu2", 34, 3);
 		String password = excelReader.getStringData("TSu2", 35, 3);
@@ -91,7 +57,7 @@ public class SignInTests extends BaseTests {
 		assertEquals(signInPage.passwordAlert(), expected);
 
 	}
-	@Test(priority = 8)
+	@Test(priority = 4)
 	public void signInWithoutCredentials() {
 		String email = "";
 		String password = "";
@@ -100,6 +66,15 @@ public class SignInTests extends BaseTests {
 		signInForm(email, password);
 		assertEquals(signInPage.emailSignInAlert(), expected);
 
+	}
+	
+	@Test(priority = 6)
+		public void signOutFromAccount() {
+		String expected = excelReader.getStringData("TSu2", 62, 3);
+		signInWithValidCredentials();
+		mainNavigation.clickOnSignOutButton();
+		
+		assertEquals(mainNavigation.textFromSignInButton(), expected);
 	}
 	
 	@AfterMethod

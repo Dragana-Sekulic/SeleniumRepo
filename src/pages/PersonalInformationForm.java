@@ -5,23 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class PersonalInformationPage {
+public class PersonalInformationForm {
 	
 	WebDriver driver;
 	WebElement personalInfoLabel;
 	WebElement firstNameInputField;
 	WebElement lastNameInputField;
 	WebElement passwordInputField;
-	WebElement addressInputField;
+	WebElement addressInputField;	
 	WebElement cityInputField;
 	Select stateDropDownManu;
 	WebElement mobilePhoneInputField;
 	WebElement postalCodeInputField;
 	WebElement adressAliasInputField;
 	WebElement registerButton;
+	WebElement saveAddressUpdateButton;
 
-
-	public PersonalInformationPage(WebDriver driver) {
+	public PersonalInformationForm(WebDriver driver) {
 		super();
 		this.driver = driver;
 	}
@@ -69,6 +69,10 @@ public class PersonalInformationPage {
 
 	public WebElement getRegisterButton() {
 		return driver.findElement(By.id("submitAccount"));
+	}
+	
+	public WebElement getSaveAddressUpdateButton() {
+		return driver.findElement(By.id("submitAddress"));
 	}
 
 	public String textFromPersonalInfoLabe() {
@@ -122,5 +126,7 @@ public class PersonalInformationPage {
 		this.getRegisterButton().click();
 		
 	}
-	
+	public void clickOnSaveAddressUpdateButton() {
+		this.getSaveAddressUpdateButton().click();
+	}
 }

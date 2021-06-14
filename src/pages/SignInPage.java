@@ -14,7 +14,7 @@ public class SignInPage {
 	WebElement invalidEmailAlert; //when trying to register
 	WebElement emailSignInInputField; // email for sign in field
 	WebElement passwordInputField;
-	WebElement signInButton;
+	WebElement signInButton; 
 	WebElement emailSignInAlert;
 	WebElement invalidPasswordAlert;
 

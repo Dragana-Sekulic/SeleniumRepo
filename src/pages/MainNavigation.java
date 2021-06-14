@@ -44,5 +44,8 @@ public class MainNavigation {
 	public void clickOnNameSurnameButton() {
 		this.getNameSurnameButton().click();
 	}
+	public String textFromSignInButton() {
+		return this.getSignInButton().getText();
+	}
 
 }
