@@ -14,6 +14,7 @@ import com.sun.xml.internal.bind.v2.model.core.MaybeElement;
 
 import pages.MainNavigation;
 import pages.MyAccountPage;
+import pages.MyWishListPage;
 import pages.PersonalInformationForm;
 import pages.ShopPage;
 import pages.SignInPage;
@@ -29,6 +30,7 @@ public class BaseTests {
 	PersonalInformationForm personalInfo;
 	MyAccountPage myAccount;
 	ShopPage shopPage;
+	MyWishListPage wishList;
 	
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -44,6 +46,7 @@ public class BaseTests {
 		personalInfo = new PersonalInformationForm(driver);
 		myAccount = new MyAccountPage(driver);
 		shopPage = new ShopPage(driver);
+		wishList = new MyWishListPage(driver);
 
 	}
 

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class PersonalInformationForm {
-	
+	//form for creating account
 	WebDriver driver;
 	WebElement personalInfoLabel;
 	WebElement firstNameInputField;
