@@ -7,7 +7,7 @@
         <methods>
           <include name="navigateToPage"/>
           <include name="closeDriver"/>
-          <include name="createWishList"/>
+          <include name="deleteWishList"/>
           <include name="setUp"/>
           <include name="deleteCookies"/>
         </methods>

@@ -37,6 +37,7 @@ public class MyAccountPage {
 	WebElement editFirstNameInputField;
 	WebElement editLastNameInputField;
 	List<WebElement> addresses1List;
+	WebElement backToHomeButton;
 	
 
 
@@ -110,10 +111,11 @@ public class MyAccountPage {
 
 	public WebElement getDeleteAddressButton() {
 		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div[2]/div/ul/li[9]/a[2]/span"));
-	}
-	
+	}	
 
-	
+	public WebElement getBackToHomeButton() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li/a/span"));
+	}
 
 	public List<WebElement> getAddressList() {
 		return driver.findElements(By.className("page-subheading"));
@@ -276,8 +278,10 @@ public class MyAccountPage {
 		this.getEditLastNameInputField().sendKeys(lastName);
 		
 	}
-	public void clickOnMyWishLists() {
+	public void clickOnMyWishListsTab() {
 		this.getMyWishListsTab().click();
 	}
-	
+	public void clickOnBackToHome() {
+		this.getBackToHomeButton().click();
+	}
 }
